@@ -205,7 +205,7 @@ defmodule Mogrify do
   def verbose(image) do
     args = ~w(-verbose -write #{dev_null()}) ++ [image.path]
 
-    {output, 0} = cmd_mogrify(args, stderr_to_stdout: true)
+    {output, _} = cmd_mogrify(args, stderr_to_stdout: true)
 
     info =
       ~r/\b(?<animated>\[0])? (?<format>\S+) (?<width>\d+)x(?<height>\d+)/
